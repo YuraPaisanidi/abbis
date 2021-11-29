@@ -5,7 +5,7 @@
 <?php get_header(); ?>
 
 
-<section class="post-content">
+<section class="post-content container">
     <?php if( !has_post_thumbnail() ): ?>
         <h1 class="title ularge bordered bold"><?php the_title(); ?></h1>
     <?php endif; ?>
@@ -14,7 +14,7 @@
         $tags        = get_tags( 'orderby=name&order=ASC' );
         $capital     = '';
         $i           = 0;
-        $cols_number = 3; // Количество колонок
+        $cols_number = 1; // Количество колонок
         $cut         = ceil( count( $tags ) / $cols_number );
         $cutter      = $cut;
         $letter_i    = 0;

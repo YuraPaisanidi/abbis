@@ -1815,3 +1815,36 @@ h2
 #wpadminbar
 		+r(600)
 			position: fixed
+
+.error404
+	min-height: calc(100vh - 114px)
+	display: flex
+	align-items: center
+	justify-content: center
+
+	&__description
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+
+
+	&__title
+		text-align: center
+		margin-bottom: 50px
+		font-size: 40px
+		font-weight: 700
+		color: $title
+
+	&__btn
+
+		a
+			color: $title
+			background: none
+			font-weight: 700
+			border-bottom: 1px solid $title
+			padding-bottom: 5px
+
+			&:hover
+				color: $lite
+				border-bottom: 1px solid $lite

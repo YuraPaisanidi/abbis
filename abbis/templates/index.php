@@ -68,9 +68,9 @@
 							<p class="work__text">
 								Нажмите на<br> интересующий вас тег
 							</p>
-							<button class="btn btn--swiper">
+							<a href="<?php echo get_home_url(); ?>/stranica-tegov" class="btn btn--swiper">
 								Перейти в теги
-							</button>
+							</a>
 						</div>
 
 						<div class="swiper-slide work__slide">
