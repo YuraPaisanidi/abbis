@@ -4,7 +4,7 @@
 <head>
 
 	<meta charset="utf-8">
-	<title>Главная</title>
+	<title><?php the_title(); ?></title>
 	<meta name="description" content="АБИСС">
 	<meta name="viewport" content="width=device-width">
 	<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico">

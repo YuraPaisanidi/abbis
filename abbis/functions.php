@@ -28,7 +28,7 @@
 //------------------delet Post Type ----------------------
 	function remove_menus(){
 	  // remove_menu_page( 'index.php' );                  //Консоль
-	  // remove_menu_page( 'edit.php' );                   //Записи
+	  remove_menu_page( 'edit.php' );                   //Записи
 	  // remove_menu_page( 'upload.php' );                 //Медиафайлы
 	  // remove_menu_page( 'edit.php?post_type=page' );    //Страницы
 	  // remove_menu_page( 'edit-comments.php' );          //Комментарии
@@ -90,7 +90,7 @@
 
 //------------------виджет---------------------
 	register_sidebar( array(
-        'name' => __( 'Телефон в шапке', '' ),
+        'name' => __( 'Поиск', '' ),
         'id' => 'top-area',
         'before_widget' => '',
         'after_widget' => '',
@@ -187,7 +187,7 @@
 
 		$wrap_before = '<div class="breadcrumbs">'; // открывающий тег обертки
 		$wrap_after = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
-		$sep = '<span class="breadcrumbs__separator"> / </span>'; // разделитель между "крошками"
+		// $sep = '<span class="breadcrumbs__separator"> / </span>'; // разделитель между "крошками"
 		$before = '<span class="breadcrumbs__current">'; // тег перед текущей "крошкой"
 		$after = '</span>'; // тег после текущей "крошки"
 
@@ -377,19 +377,19 @@
 	}
 
 
-	//------------------Register Custom Post Новости---------------------
-	function news_post_type() {
+	//------------------Register Custom Post Вопросы---------------------
+	function questions_post_type() {
 
 		$labels = array(
-				'name'                  => _x( 'Новости и публикации', 'Post Type General Name', 'text_domain' ),
-				'singular_name'         => _x( 'Новости и публикации', 'Post Type Singular Name', 'text_domain' ),
-				'menu_name'             => __( 'Новости и публикации', 'text_domain' ),
-				'all_items'             => __( 'Новости и публикации', 'text_domain' ),
-				'add_new_item'          => __( 'Добавить статью', 'text_domain' ),
-				'add_new'               => __( 'Добавить статью', 'text_domain' ),
+				'name'                  => _x( 'Результаты поиска', 'Post Type General Name', 'text_domain' ),
+				'singular_name'         => _x( 'Результаты поиска', 'Post Type Singular Name', 'text_domain' ),
+				'menu_name'             => __( 'Результаты поиска', 'text_domain' ),
+				'all_items'             => __( 'Результаты поиска', 'text_domain' ),
+				'add_new_item'          => __( 'Добавить вопрос', 'text_domain' ),
+				'add_new'               => __( 'Добавить вопрос', 'text_domain' ),
 		);
 		$args = array(
-				'label'                 => __( 'Новости и публикации', 'text_domain' ),
+				'label'                 => __( 'Результаты поиска', 'text_domain' ),
 				'labels'                => $labels,
 				'supports'              => array( 'title', 'thumbnail', 'excerpt'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 				'hierarchical'          => false,
@@ -405,9 +405,10 @@
 				'exclude_from_search'   => false,
 				'publicly_queryable'    => true,
 				'capability_type'       => 'page',
+				'taxonomies' => array('post_tag'),
 		);
-		register_post_type( 'news', $args );
+		register_post_type( 'questions', $args );
 
 }
-add_action( 'init', 'news_post_type', 0 );
+add_action( 'init', 'questions_post_type', 0 );
 

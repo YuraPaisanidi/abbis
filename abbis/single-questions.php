@@ -1,88 +1,20 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-
-	<meta charset="utf-8">
-	<title>Руководство</title>
-	<meta name="description" content="АБИСС">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" href="img/favicon.ico">
-	<meta property="og:image" content="img/logo.svg">
-	<link rel="stylesheet" href="css/app.min.css?v=1">
-	<script src="js/app.min.js" defer></script>
-
-</head>
-
-<body>
-
-	<header class="header">
-		<div class="header__container container">
-			<a href="index.html" class="header__logo">
-				<img src="img/logo.svg" alt="">
-			</a>
-			<div class="header__wrap">
-				<div class="header__nav">
-					<div class="search__content--mobile">
-						<form>
-							<input type="text" class="search-inp" placeholder="Искать..">
-							<button class="search--btn"><a href="#"><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></a></svg></button>
-						</form>
-					</div>
-					<div class="header__list">
-						<ul>
-							<li><a href="#">Ассоциация АБИСС</a></li>
-							<li><a href="#">Задать вопрос</a></li>
-							<li><a href="#">Дерево тегов</a></li>
-							<li class="modal__contact"><a href="#">Контакты</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="header__search">
-					<div class="search">
-						<div class="search__link search__open"><a href="#"><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></svg></a></div>
-						<div class="search__content">
-							<form>
-								<input type="text" class="search-inp" placeholder="Искать..">
-								<button class="search--btn"><a href="#"><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></a></svg></button>
-								<a href="#" class="search--close search__open"><svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l14 14m0-14L1 15" stroke="#004584" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-							</form>
-						</div>
-					</div>
-				</div>
-				<button class="hamburger" type="button">
-					<span class="hamburger__item"></span>
-				</button>
-			</div>
-		</div>
-	</header>
+<?php get_header(); ?>
 
 	<div class="crumbs">
 		<div class="container">
-			<ul>
-				<li><a href="#"></a>Главная</li>
-				<li><a href="#"></a>О нас</li>
-				<li><a href="#"></a>Руководство</li>
-			</ul>
+			<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
 		</div>
 	</div>
 
 	<section class="team">
 		<div class="container">
 			<div class="team__answer">
-				<h2 class="team__answer_title h2">Единая методика расчета индикатора<br> подозрительной операции</h2>
-				<p class="team__answer_text">Кредитные организации отмечают необходимость разработки регулятором единой методики расчета индикатора подозрительной операции, так как в настоящее время она определяется самим банком и может по-разному трактоваться каждой стороной расчетов.</p>
+				<?php the_field('question'); ?>
 			</div>
 
 			<div class="tag tag--team">
 				<div class="tag__list">
-					<a href="#">732-П</a>
-					<a href="#">О платежной системе Банка России</a>
-					<a href="#">Платежная система</a>
-					<a href="#">СБП</a>
-					<a href="#">Сервис быстрых платежей</a>
-					<a href="#">Быстрые платежи</a>
-					<a href="#">Перевод по номеру телефона</a>
+				<?php the_tags( '', ''); ?>
 				</div>
 			</div>
 
@@ -96,7 +28,7 @@
 				</div>
 				<div class="bank__block">
 					<div class="bank__img">
-						<img src="img/bank.png" alt="">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/bank.png" alt="">
 					</div>
 					<div class="bank__text">
 						<p class="bank__text_title">Банк России</p>
@@ -107,14 +39,14 @@
 			</div>
 
 			<div class="team__comment">
-				<img src="img/preds.svg" alt="">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/preds.svg" alt="">
 				<p>Комментарии консультантов</p>
 			</div>
 
 			<div class="team__list">
 				<div class="team__person">
 					<div class="team__person_img">
-						<img src="img/person.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person.jpg" alt="">
 					</div>
 					<div class="team__person_info">
 						<div class="team__person_title">
@@ -131,7 +63,7 @@
 
 				<div class="team__person">
 					<div class="team__person_img">
-						<img src="img/person2.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person2.jpg" alt="">
 					</div>
 					<div class="team__person_info">
 						<div class="team__person_title">
@@ -148,7 +80,7 @@
 
 				<div class="team__person">
 					<div class="team__person_img">
-						<img src="img/person3.jpg" alt="">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person3.jpg" alt="">
 					</div>
 					<div class="team__person_info">
 						<div class="team__person_title">
@@ -212,65 +144,4 @@
 		</div>
 	</section>
 
-	<footer class="footer">
-		<div class="footer__container container">
-			<a href="index.html" class="footer__logo_mobile">
-				<img src="img/logo_white.svg" alt="">
-			</a>
-			<div class="footer__block">
-				<a href="index.html" class="footer__logo">
-					<img src="img/logo_white.svg" alt="">
-				</a>
-				<div class="footer__contact">
-					<p class="footer__contact_title">Контакты:</p>
-					<a href="#">
-						<svg width="13" height="17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.157 0A6.164 6.164 0 000 6.157c0 4.213 5.51 10.398 5.744 10.66.22.244.605.244.825 0 .235-.262 5.744-6.447 5.744-10.66A6.164 6.164 0 006.157 0zm0 9.254a3.101 3.101 0 01-3.098-3.097 3.101 3.101 0 013.098-3.098 3.101 3.101 0 013.097 3.098 3.101 3.101 0 01-3.097 3.097z" fill="#fff"/></svg>
-						Российская Федерация, 115088, Москва,<br>
-						ул. Шарикоподшипниковская, дом 1</a>
-					<a href="tel:+74959257790">
-						<svg width="15" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_1_102)"><path d="M14.664 11.854l-2.317-2.316c-.461-.46-1.225-.446-1.703.032l-1.167 1.167-.23-.129C8.51 10.2 7.5 9.64 6.44 8.579 5.375 7.514 4.815 6.504 4.405 5.766l-.125-.225.783-.782.385-.386c.478-.478.492-1.242.031-1.703L3.163.353c-.46-.46-1.225-.446-1.703.032l-.653.657.018.018c-.22.279-.402.601-.538.949-.126.33-.204.646-.24.962C-.259 5.507.9 7.824 4.045 10.97c4.347 4.347 7.85 4.019 8.002 4.003.329-.04.644-.118.965-.243a3.76 3.76 0 00.945-.535l.014.012.662-.647c.477-.479.49-1.243.03-1.704z" fill="#fff"/></g><defs><clipPath id="clip0_1_102"><path fill="#fff" d="M0 0h15v15H0z"/></clipPath></defs></svg>
-						Тел.: +7 (495) 925-77-90</a>
-					<a href="mailto:abiss@abiss.ru">
-						<svg width="15" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 0h12c.825 0 1.5.652 1.5 1.449v8.693c0 .797-.675 1.449-1.5 1.449h-12c-.825 0-1.5-.652-1.5-1.449V1.449C0 .652.675 0 1.5 0zm6.795 6.042L13.2 3.079a.615.615 0 00.3-.522c0-.485-.547-.775-.975-.521L7.5 5.07 2.475 2.036c-.428-.254-.975.036-.975.521 0 .21.113.406.3.522l4.905 2.963a1.53 1.53 0 001.59 0z" fill="#fff"/></svg>
-						E-mail: abiss@abiss.ru</a>
-				</div>
-
-				<div class="footer__nav">
-					<a href="#">Ассоциация АБИСС</a>
-					<a href="#">Задать вопрос</a>
-					<a href="#">Дерево тегов</a>
-				</div>
-			</div>
-			<div class="footer__search">
-				<form action="">
-					<input type="text" placeholder="Искать..">
-					<button><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></svg></button>
-				</form>
-			</div>
-		</div>
-		<div class="footer__line"></div>
-		<p class="footer__abiss">© 2006-2021 ABISS. Все права защищены.</p>
-	</footer>
-
-	<div class="modal" id="modal__contact">
-		<div class="modal__content modal__content--contact">
-			<button class="close modal__close" type="button">
-				<span></span>
-				<span></span>
-			</button>
-			<div class="modal__contacts">
-				<h2 class="order__title h2">Контакты</h2>
-				<div class="modal__contacts_phone">
-					<svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.07 2.927C13.164-.977 6.833-.976 2.928 2.93-.977 6.835-.976 13.167 2.93 17.072A10 10 0 1017.07 2.928zM15.145 13.93l-.002.002v-.004l-.506.504a2.667 2.667 0 01-2.517.72 8.859 8.859 0 01-2.573-1.154 11.888 11.888 0 01-2.03-1.636A11.974 11.974 0 016 10.52a9.331 9.331 0 01-1.14-2.307 2.667 2.667 0 01.667-2.723l.593-.594a.423.423 0 01.599 0h.001L8.593 6.77a.423.423 0 01.002.598l-.002.002-1.1 1.1A.897.897 0 007.4 9.637c.398.546.838 1.06 1.317 1.537a12.784 12.784 0 001.733 1.457.903.903 0 001.153-.1l1.064-1.08a.423.423 0 01.6 0l1.876 1.88a.423.423 0 01.002.598z" fill="#FF8515"/></svg>
-					<a href="tel:+74959257790">+7 (495) 925-77-90</a>
-				</div>
-				<div class="modal__contacts_mail">
-					<svg width="20" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 0h16c1.1 0 2 .844 2 1.875v11.25C20 14.156 19.1 15 18 15H2c-1.1 0-2-.844-2-1.875V1.875C0 .844.9 0 2 0zm9.06 7.819l6.54-3.835c.25-.15.4-.403.4-.675 0-.628-.73-1.003-1.3-.675L10 6.563 3.3 2.634c-.57-.328-1.3.047-1.3.675 0 .272.15.525.4.675L8.94 7.82c.65.384 1.47.384 2.12 0z" fill="#FF8515"/></svg>
-					<a href="mailto:abiss@abiss.ru">abiss@abiss.ru</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
-</html>
+<?php get_footer(); ?>

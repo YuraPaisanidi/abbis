@@ -64,6 +64,46 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		hamburger('.hamburger', '.header__nav', '.header');
 
+		//----------------------MODAL-----------------------
+		const modals = (modalSelector) => {
+			const	modal = document.querySelectorAll(modalSelector);
+
+			if (modal) {
+				let i = 1;
+
+				modal.forEach(item => {
+					const wrap = item.id;
+					const link = document.querySelectorAll('.' + wrap);
+
+					link.forEach(linkItem => {
+						let close = item.querySelector('.close');
+							if (linkItem) {
+								linkItem.addEventListener('click', (e) => {
+									if (e.target) {
+										e.preventDefault();
+									}
+									item.classList.add('active');
+								});
+							}
+
+							if (close) {
+								close.addEventListener('click', () => {
+									item.classList.remove('active');
+								});
+							}
+
+						item.addEventListener('click', (e) => {
+							if (e.target === item) {
+								item.classList.remove('active');
+							}
+						});
+					});
+				});
+			}
+
+		};
+		modals('.modal');
+
 	//----------------------FORM-----------------------
 		const forms = (formsSelector) => {
 		const form = document.querySelectorAll(formsSelector);
@@ -274,4 +314,3 @@ document.addEventListener("DOMContentLoaded", function() {
 		forms('.form');
 
 });
-	
