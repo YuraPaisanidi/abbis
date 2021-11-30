@@ -22,16 +22,13 @@
 			</div>
 
 			<div class="footer__nav">
-				<a href="#">Ассоциация АБИСС</a>
-				<a href="#">Задать вопрос</a>
-				<a href="#">Дерево тегов</a>
+				<a href="http://www.abiss.tw1.ru/" target="_blank">Ассоциация АБИСС</a>
+				<a href="#" class="modal__form">Задать вопрос</a>
+				<a href="<?php echo get_home_url(); ?>/derevo-tegov">Дерево тегов</a>
 			</div>
 		</div>
 		<div class="footer__search">
-			<form action="">
-				<input type="text" placeholder="Искать..">
-				<button><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></svg></button>
-			</form>
+			<?php echo do_shortcode( '[ivory-search id="101" title="footer_search"]' ); ?>
 		</div>
 	</div>
 	<div class="footer__line"></div>
@@ -107,5 +104,25 @@
 				</div>
 			</div>
 		</section>
+	</div>
+</div>
+
+<div class="modal" id="modal__contact">
+	<div class="modal__content modal__content--contact">
+		<button class="close modal__close" type="button">
+			<span></span>
+			<span></span>
+		</button>
+		<div class="modal__contacts">
+			<h2 class="order__title h2">Контакты</h2>
+			<div class="modal__contacts_phone">
+				<svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.07 2.927C13.164-.977 6.833-.976 2.928 2.93-.977 6.835-.976 13.167 2.93 17.072A10 10 0 1017.07 2.928zM15.145 13.93l-.002.002v-.004l-.506.504a2.667 2.667 0 01-2.517.72 8.859 8.859 0 01-2.573-1.154 11.888 11.888 0 01-2.03-1.636A11.974 11.974 0 016 10.52a9.331 9.331 0 01-1.14-2.307 2.667 2.667 0 01.667-2.723l.593-.594a.423.423 0 01.599 0h.001L8.593 6.77a.423.423 0 01.002.598l-.002.002-1.1 1.1A.897.897 0 007.4 9.637c.398.546.838 1.06 1.317 1.537a12.784 12.784 0 001.733 1.457.903.903 0 001.153-.1l1.064-1.08a.423.423 0 01.6 0l1.876 1.88a.423.423 0 01.002.598z" fill="#FF8515"/></svg>
+				<a href="tel:<?php the_field('tel_url', 'option'); ?>"><?php the_field('tel', 'option'); ?></a>
+			</div>
+			<div class="modal__contacts_mail">
+				<svg width="20" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 0h16c1.1 0 2 .844 2 1.875v11.25C20 14.156 19.1 15 18 15H2c-1.1 0-2-.844-2-1.875V1.875C0 .844.9 0 2 0zm9.06 7.819l6.54-3.835c.25-.15.4-.403.4-.675 0-.628-.73-1.003-1.3-.675L10 6.563 3.3 2.634c-.57-.328-1.3.047-1.3.675 0 .272.15.525.4.675L8.94 7.82c.65.384 1.47.384 2.12 0z" fill="#FF8515"/></svg>
+				<a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
+			</div>
+		</div>
 	</div>
 </div>
