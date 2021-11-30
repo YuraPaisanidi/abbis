@@ -28,7 +28,7 @@
 //------------------delet Post Type ----------------------
 	function remove_menus(){
 	  // remove_menu_page( 'index.php' );                  //Консоль
-	  remove_menu_page( 'edit.php' );                   //Записи
+	  // remove_menu_page( 'edit.php' );                   //Записи
 	  // remove_menu_page( 'upload.php' );                 //Медиафайлы
 	  // remove_menu_page( 'edit.php?post_type=page' );    //Страницы
 	  // remove_menu_page( 'edit-comments.php' );          //Комментарии
@@ -411,4 +411,3 @@
 
 }
 add_action( 'init', 'questions_post_type', 0 );
-

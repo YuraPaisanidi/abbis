@@ -131,6 +131,7 @@
 		font-size: 14px
 		width: 170px
 		height: 50px
+		align-self: center
 
 		&:hover
 			background: $lite
@@ -969,9 +970,8 @@ h2
 
 	ul
 		display: flex
-		flex-wrap: wrap
 
-	span
+	li
 		font-size: 13px
 		line-height: 150%;
 		color: #9da7b6
@@ -1509,14 +1509,23 @@ h2
 		padding-top: 30px
 		padding-bottom: 30px
 
+	&__container
+		display: flex
+		flex-direction: column
+
 	&__title
 		margin-bottom: 30px
 
 		+r(576)
 			margin-bottom: 15px
 
-	&__form
+	&__form, .searchform
 		position: relative
+		margin-bottom: 10px
+
+		#searchsubmit
+			display: none
+
 		input
 			display: block
 			width: 100%
@@ -1549,11 +1558,8 @@ h2
 			font-size: 20px
 
 		&_number
-			// display: none // result__none
-			position: absolute
 			color: #8a8a8a
-			bottom: -30px
-			left: 0
+			margin-bottom: 20px
 
 	&__list
 		padding-top: 60px
@@ -1613,6 +1619,7 @@ h2
 .pagination
 	display: flex
 	gap: 20px
+	justify-content: center
 	align-items: center
 	margin: 30px 0 60px 0
 	// display: none // result__none
@@ -1651,31 +1658,31 @@ h2
 		+r(576)
 			gap: 7px
 
-		a
-			display: flex
-			justify-content: center
-			align-items: center
-			width: 40px
-			height: 40px
-			font-size: 14px
-			line-height: 38px
-			color: $accent
-			text-decoration: none
-			border-radius: 20px
-			border: $accent 1px solid
-			text-align: center
-			+transition
+	a,span
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 40px
+		height: 40px
+		font-size: 14px
+		line-height: 38px
+		color: $accent
+		text-decoration: none
+		border-radius: 20px
+		border: $accent 1px solid
+		text-align: center
+		+transition
 
-			+r(576)
-				width: 30px
-				height: 30px
+		+r(576)
+			width: 30px
+			height: 30px
 
 
-			&:hover
-				color: #fff
-				background: $accent
+		&:hover
+			color: #fff
+			background: $accent
 
-	&__active
+	span
 		color: #fff !important
 		background: $accent
 
@@ -1848,3 +1855,30 @@ h2
 			&:hover
 				color: $lite
 				border-bottom: 1px solid $lite
+
+.tags-cloud
+	padding-top: 100px
+
+	&--search
+		padding-top: 0
+		margin-bottom: 30px
+
+	&__title
+		margin-bottom: 30px
+
+	&__wrap
+		@extend .tag__list
+
+	.tag-cloud-link
+		display: block
+		color: #000
+		font-weight: 500
+		border: 1px solid $accent
+		border-radius: 6px
+		padding: 5px
+		font-size: 15px !important
+		width: auto
+
+		&:hover
+			color: $lite
+			border: 1px solid $lite
