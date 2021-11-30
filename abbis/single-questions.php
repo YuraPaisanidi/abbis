@@ -1,17 +1,11 @@
 <?php get_header(); ?>
 
-	<!-- <div class="crumbs">
-		<div class="container">
-			<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
-		</div>
-	</div> -->
-
 	<div class="crumbs">
 		<div class="container">
 			<ul>
-				<li><a href="<?php echo get_home_url(); ?>/"></a>Главная</li>
-				<li><a href="<?php echo get_home_url(); ?>/?s"></a>Результаты поиска</li>
-				<li><a href="#"></a>Вопрос</li>
+				<li><a href="<?php echo get_home_url(); ?>/">Главная</a></li>
+				<li><a href="<?php echo get_home_url(); ?>/?s">Результаты поиска</a></li>
+				<li><p><?php the_title(); ?></p></li>
 			</ul>
 		</div>
 	</div>
@@ -64,58 +58,8 @@
 				<p>Комментарии консультантов</p>
 			</div>
 
-			<div class="team__list">
-				<div class="team__person">
-					<div class="team__person_img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person.jpg" alt="">
-					</div>
-					<div class="team__person_info">
-						<div class="team__person_title">
-							Безгодов Евгений
-						</div>
-						<div class="team__person_subtitle">
-							исполнительный директор и сооснователь компании Deiteriy.
-						</div>
-						<div class="team__person_text">
-							Специализируется на исследовании вопросов менеджмента информационной безопасности и управления соответствием требованиям национальных и международных стандартов. Является автором публикаций в периодических профессиональных изданиях. Имеет практический опыт обеспечения информационной безопасности коммерческих организаций. Обладает профессиональными статусами CISA, CISM, PCI QSA, PCI QPA, аудитор СТО БР ИББС и 382-П.
-						</div>
-					</div>
-				</div>
+			<?php comments_template(); ?>
 
-				<div class="team__person">
-					<div class="team__person_img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person2.jpg" alt="">
-					</div>
-					<div class="team__person_info">
-						<div class="team__person_title">
-							Малинин Юрий
-						</div>
-						<div class="team__person_subtitle">
-							председатель Ассоциации РОСЭУ, председатель комитета по образованию в области информационной безопасности Ассоциации Защиты Информации, член совета директоров ассоциации «РусКрипто»
-						</div>
-						<div class="team__person_text">
-							С 2001 года занимает пост директора Академии Информационных Систем. Инициатор и организатор ряда новых учебных программ, тренингов, семинаров, всероссийских и международных конференций по тематике «Информационная безопасность», «Информационные технологии», «Электронный документооборот» и другие.
-						</div>
-					</div>
-				</div>
-
-				<div class="team__person">
-					<div class="team__person_img">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/img/person3.jpg" alt="">
-					</div>
-					<div class="team__person_info">
-						<div class="team__person_title">
-							Прищеп Станислав
-						</div>
-						<div class="team__person_subtitle">
-							руководитель направления систем управления информационной безопасности компании STEP LOGIC
-						</div>
-						<div class="team__person_text">
-							Более 15 лет работает в сфере информационной и сетевой безопасности. В разное время занимал должности аналитика, консультанта, архитектора и инженера по ИБ в различных банках и системных интеграторах. В компании STEP LOGIC руководит направлением систем мониторинга и управления информационной безопасностью.
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</section>
 

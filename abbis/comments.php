@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<!-- <h2 class="comments-title">
 			<?php
 			$abbis_comment_count = get_comments_number();
 			if ( '1' === $abbis_comment_count ) {
@@ -44,20 +44,21 @@ if ( post_password_required() ) {
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>.comments-title -->
 
 		<?php the_comments_navigation(); ?>
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
+		<div class="team__list">
+			<? $comments_query = new WP_Comment_Query;
+				$comments = $comments_query->query( 'status=approve' );
+				if ( $comments ) {
+				foreach ( $comments as $comment ) {
+					echo '<div class="team__person"><div class="team__person_img">' . get_avatar( $comment, 250 ); '';
+					echo '</div><div class="team__person_info"><p class="team__person_title">' . $comment->comment_author . '</p>';
+					// echo '<p class="team__person_subtitle">' . get_the_author_meta('user_description'); '</p>';
+					echo '<div class="team__person_text">' . $comment->comment_content . '</div></div></div>';
+			}} ?>
+		</div><!-- .comment-list -->
 
 		<?php
 		the_comments_navigation();

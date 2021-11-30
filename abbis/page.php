@@ -17,19 +17,32 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+	<?php 
+	$tags = wp_get_post_tags($post->ID);
+	if ($tags) {
+		 $tag_ids = array();
+		 foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+		 $args=array(
+		 'tag__in' => $tag_ids, // Сортировка происходит по тегам (меткам)
+		 'orderby'=>rand, // Добавляем условие сортировки рандом (случайный подбор)
+		 'caller_get_posts'=>1, // Запрещаем повторение ссылок
+		 'post__not_in' => array($post->ID),
+		 'showposts'=>6 // Цифра означает количество выводимых записей
+		 );
+		 $my_query = new wp_query($args);
+		 if( $my_query->have_posts() ) {
+			while ($my_query->have_posts()) {
+					$my_query->the_post();
+				?>
 
-			get_template_part( 'template-parts/content', 'page' );
+					<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"></a>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
+				<?php
+			}
+		}
+		 wp_reset_query();
+	}
+?>
 
 	</main><!-- #main -->
 

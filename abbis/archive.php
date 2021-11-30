@@ -1,29 +1,21 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying archive pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty_One
+ * @since Twenty Twenty-One 1.0
+ */
 
-<div class="crumbs">
-	<div class="container">
-		<ul>
-			<li><a href="<?php echo get_home_url(); ?>"></a>Главная</li>
-			<li><a href="<?php echo get_home_url(); ?>/?s"></a>Результаты поиска</li>
-		</ul>
-	</div>
-</div>
+get_header();
 
-<section class="result">
+$description = get_the_archive_description();
+?>
+
+<section class="result result--tags">
 	<div class="result__container container">
-
-		<h2 class="result__title h2">Результаты поиска</h2>
-		<?php echo do_shortcode( '[ivory-search id="32" title="Default Search Form"]' ); ?>
-		
-		<div class="result__form_number">
-			Найдено: 
-			<span>
-			<?php
-				global $wp_query;
-				echo $wp_query->found_posts;
-			?>
-			</span>
-		</div>
 		
 		<?php
 			if (have_posts()) :
@@ -52,15 +44,6 @@
 		?>
 
 		<?php wptuts_pagination(); ?>
-
-		<div class="tags-cloud tags-cloud--search">
-			<div class="tags-cloud__container container">
-
-				<div class="tags-cloud__wrap">
-					<?php wp_tag_cloud('number=20'); ?>
-				</div>
-			</div>
-		</div>
 
 		<button class="btn--answer modal__form">
 			Задать вопрос

@@ -17,38 +17,32 @@ get_header();
 
 	<main id="primary" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) :
+	<?php 
+	$tags = wp_get_post_tags($post->ID);
+	if ($tags) {
+		 $tag_ids = array();
+		 foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
+		 $args=array(
+		 'tag__in' => $tag_ids, // Сортировка происходит по тегам (меткам)
+		 'orderby'=>rand, // Добавляем условие сортировки рандом (случайный подбор)
+		 'caller_get_posts'=>1, // Запрещаем повторение ссылок
+		 'post__not_in' => array($post->ID),
+		 'showposts'=>6 // Цифра означает количество выводимых записей
+		 );
+		 $my_query = new wp_query($args);
+		 if( $my_query->have_posts() ) {
+			while ($my_query->have_posts()) {
+					$my_query->the_post();
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+
+					<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"></a>
+
 				<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
-
-			endwhile;
-
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif;
-		?>
+			}
+		}
+		 wp_reset_query();
+	}
+?>
 
 	</main><!-- #main -->
 

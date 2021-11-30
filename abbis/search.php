@@ -1,11 +1,4 @@
-
 <?php get_header(); ?>
-
-<!-- <div class="crumbs">
-	<div class="container">
-		<?php if ( function_exists( 'dimox_breadcrumbs' ) ) dimox_breadcrumbs(); ?>
-	</div>
-</div> -->
 
 <div class="crumbs">
 	<div class="container">
@@ -64,7 +57,7 @@
 			<div class="tags-cloud__container container">
 
 				<div class="tags-cloud__wrap">
-					<?php wp_tag_cloud('number="5"'); ?>
+					<?php wp_tag_cloud('number=20'); ?>
 				</div>
 			</div>
 		</div>

@@ -53,9 +53,9 @@
 							<p class="work__text">
 								Введите ключевое слово<br> в строке поиска
 							</p>
-							<button class="btn btn--swiper">
+							<a href="<?php echo get_home_url(); ?>/?s" class="btn btn--swiper">
 								Начать поиск
-							</button>
+							</a>
 						</div>
 
 						<div class="swiper-slide work__slide">
@@ -68,7 +68,7 @@
 							<p class="work__text">
 								Нажмите на<br> интересующий вас тег
 							</p>
-							<a href="<?php echo get_home_url(); ?>/stranica-tegov" class="btn btn--swiper">
+							<a href="<?php echo get_home_url(); ?>/derevo-tegov" class="btn btn--swiper">
 								Перейти в теги
 							</a>
 						</div>
@@ -97,10 +97,11 @@
 	<section class="allsearch">
 		<div class="container">
 			<h2 class="allsearch__title h2">Введите ваш запрос</h2>
-			<form>
+			<!-- <form>
 				<input type="text" class="" placeholder="Например: 479-Ф3">
 				<button><a href="#"><svg width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.02 0c4.973 0 9.02 4.046 9.02 9.02a8.965 8.965 0 01-1.387 4.799l2.76 2.76a2.004 2.004 0 11-2.835 2.834l-2.76-2.76a8.966 8.966 0 01-4.798 1.386C4.046 18.04 0 13.993 0 9.02S4.046 0 9.02 0zm0 16.035a7.023 7.023 0 007.015-7.015A7.023 7.023 0 009.02 2.004 7.023 7.023 0 002.004 9.02a7.023 7.023 0 007.016 7.015z" fill="#FF8515"/></a></svg></button>
-			</form>
+			</form> -->
+			<?php echo do_shortcode( '[ivory-search id="32" title="Default Search Form"]' ); ?>
 		</div>
 	</section>
 

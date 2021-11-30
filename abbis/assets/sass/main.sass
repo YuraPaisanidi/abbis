@@ -972,10 +972,15 @@ h2
 		display: flex
 
 	li
-		font-size: 13px
-		line-height: 150%;
-		color: #9da7b6
-		text-decoration: none
+		display: flex
+		align-items: center
+		justify-content: center
+
+		a,p
+			font-size: 13px
+			line-height: 150%;
+			color: #9da7b6
+			text-decoration: none
 
 		&:hover
 			text-decoration: underline
@@ -1087,6 +1092,10 @@ h2
 			+r(576)
 				margin-bottom: 15px
 
+		&_text
+			display: flex
+			flex-direction: column
+			gap: 20px
 .bank
 	margin-bottom: 50px
 
@@ -1616,6 +1625,9 @@ h2
 		&_color
 			color: red
 
+	&--tags
+		padding-top: 150px
+
 .pagination
 	display: flex
 	gap: 20px
@@ -1857,7 +1869,7 @@ h2
 				border-bottom: 1px solid $lite
 
 .tags-cloud
-	padding-top: 100px
+	padding: 100px 0
 
 	&--search
 		padding-top: 0
@@ -1882,3 +1894,69 @@ h2
 		&:hover
 			color: $lite
 			border: 1px solid $lite
+
+.logged-in-as,
+.comment-reply-title,
+.must-log-in
+	display: none
+
+.comment
+	&-form
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 100%
+		margin-bottom: 40px
+
+		&-comment
+			display: flex
+			flex-direction: column
+			gap: 10px
+			width: 100%
+			margin-bottom: 20px
+
+		label
+			margin-bottom: 0
+
+		textarea
+			@extend .form__textarea
+
+		.submit
+			@extend .btn
+			border-radius: 6px
+
+.is-search-input
+	display: block
+	width: 100%
+	height: 60px !important
+	background: #fff
+	border: 1px solid #ff8515
+	border-radius: 40px !important
+	font-size: 15px !important
+	line-height: 38px
+	color: #0f233f
+	padding: 0 60px !important
+
+	+r(576)
+		height: 40px
+
+	&::placeholder
+		color: gray
+
+.is-search-form
+	position: relative
+	margin-bottom: 10px
+
+	&::before
+		content: url(../img/search.svg)
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		border: none
+		background: transparent
+		padding: 0 25px
+		display: flex
+		align-items: center
+		gap: 10px
+			font-size: 20px
