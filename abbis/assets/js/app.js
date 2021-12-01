@@ -150,33 +150,59 @@ document.addEventListener("DOMContentLoaded", function() {
 				}
 			}
 
+			// function formValidate(item) {
+			// 	let error = 0;
+			// 	let formReq = formParent.querySelectorAll('._req');
+
+			// 	for (let index = 0; index < formReq.length; index++) {
+			// 		const input = formReq[index];
+
+			// 		if (input.classList.contains('_email')) {
+			// 			if(emailTest(input)) {
+			// 				formAddErrorEmail(input);
+			// 				error++;
+			// 			}
+			// 		} else	if (input.classList.contains('_contact')) {
+			// 			if(emailTest(input)) {
+			// 				formAddContact(input);
+			// 				error++;
+			// 			} 
+			// 		} else	if (input.classList.contains('_organization')) {
+			// 			if(emailTest(input)) {
+			// 				formAddOrganization(input);
+			// 				error++;
+			// 			} 
+			// 		} else	if (input.classList.contains('_massage')) {
+			// 			if(emailTest(input)) {
+			// 				formAddMassage(input);
+			// 				error++;
+			// 			} 
+			// 		} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+			// 			formAddErrorCheck(input);
+			// 			error++;
+			// 		} else {
+			// 			if (input.value === '') {
+			// 				formAddError(input);
+			// 				error++;
+			// 			}
+			// 		}
+			// 	}
+			// 	return error;
+			// }
+
 			function formValidate(item) {
 				let error = 0;
 				let formReq = formParent.querySelectorAll('._req');
 
 				for (let index = 0; index < formReq.length; index++) {
 					const input = formReq[index];
+					// formRemoveError(input);
 
 					if (input.classList.contains('_email')) {
 						if(emailTest(input)) {
 							formAddErrorEmail(input);
 							error++;
 						}
-					} else	if (input.classList.contains('_contact')) {
-						if(emailTest(input)) {
-							formAddContact(input);
-							error++;
-						} 
-					} else	if (input.classList.contains('_organization')) {
-						if(emailTest(input)) {
-							formAddOrganization(input);
-							error++;
-						} 
-					} else	if (input.classList.contains('_massage')) {
-						if(emailTest(input)) {
-							formAddMassage(input);
-							error++;
-						} 
 					} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
 						formAddErrorCheck(input);
 						error++;

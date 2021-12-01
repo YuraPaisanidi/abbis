@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="order__wrap">
 				<h2 class="order__title h2">Оставить заявку</h2>
-				<p class="order__subtitle">Если вы не согласны с нашими экспертами либо хотите присоединиться к<br> экспертизе ассоциации, оставьтк заявку и мы с Вами свяжемся</p>
+				<p class="order__subtitle">Если вы хотите участвовать в формировании БЗ в качестве эксперта, вы можете присоединиться к ассоциации АБИСС</p>
 				<form action="#" method="POST" class="form">
 					<div class="form__wrap">
 						<div class="form__item">

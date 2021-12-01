@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="footer__line"></div>
-	<p class="footer__abiss">© 2006-2021 ABISS. Все права защищены.</p>
+	<p class="footer__abiss">© 2006-2021 АББИС. Все права защищены.</p>
 </footer>
 
 <div class="modal" id="modal__form">
@@ -124,5 +124,17 @@
 				<a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="modal" id="modal__thanks">
+	<div class="modal__form">
+		<button class="close modal__close" type="button">
+			<span></span>
+			<span></span>
+		</button>
+
+		<h3>Спасибо за доверие!</h3>
+		<p>Ваш вопрос отправлен</p>
 	</div>
 </div>

@@ -404,6 +404,9 @@ h2
 		opacity: 0
 		+transition
 
+		input, label
+			height: 40px !important
+
 	&__content
 		position: absolute
 		top: 50%
@@ -577,7 +580,7 @@ h2
 			margin-bottom: 15px
 
 .update
-	padding-top: 60px
+	padding-top: 90px
 	padding-bottom: 60px
 
 	+r(576)
@@ -615,13 +618,13 @@ h2
 
 	&__title
 		margin-bottom: 40px
-		text-align: center
 
 		+r(576)
 			margin-bottom: 15px
 
 	&__subtitle
 		margin-bottom: 30px
+		font-size: 18px
 
 		+r(767)
 			margin-bottom: 15px
@@ -653,7 +656,7 @@ h2
 			border-bottom: #fff 1px solid
 
 .allsearch
-	padding-top: 50px
+	padding-top: 75px
 
 	+r(576)
 		padding-top: 30px
@@ -1094,7 +1097,7 @@ h2
 		display: flex
 		gap: 50px
 		margin-bottom: 40px
-		align-items: center
+		// align-items: center
 
 		+r(992)
 			gap: 20px
@@ -1927,7 +1930,7 @@ h2
 		border: 1px solid $accent
 		border-radius: 6px
 		padding: 5px
-		font-size: 15px !important
+		font-size: 12px !important
 		width: auto
 
 		&:hover

@@ -110,7 +110,7 @@
 					foreach($recent_posts as $post){
 					echo '
 						<div class="update__block">
-							<h2 class="update__subtitle h2">'.$post["post_title"].'</h2>
+							<h3 class="update__subtitle">'.$post["post_title"].'</h3>
 							<p class="update__text">
 							'.$post["post_excerpt"].'
 							</p>
