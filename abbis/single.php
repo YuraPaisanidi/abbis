@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="order__wrap">
 				<h2 class="order__title h2">Оставить заявку</h2>
-				<p class="order__subtitle">Если вы хотите участвовать в формировании БЗ в качестве эксперта, вы можете присоединиться к ассоциации АБИСС</p>
+				<p class="order__subtitle">Если вы хотите участвовать в формировании Базы знаний в качестве эксперта, вы можете присоединиться к ассоциации АБИСС</p>
 				<form action="#" method="POST" class="form">
 					<div class="form__wrap">
 						<div class="form__item">

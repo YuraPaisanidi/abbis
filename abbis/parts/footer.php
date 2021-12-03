@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="footer__line"></div>
-	<p class="footer__abiss">© 2006-2021 АББИС. Все права защищены.</p>
+	<p class="footer__abiss">© 2006-2021 АБИСС. Все права защищены.</p>
 </footer>
 
 <div class="modal" id="modal__form">
