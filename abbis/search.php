@@ -75,7 +75,6 @@
 		</div>
 
 		<section class="how">
-			<h2 class="how__title h2">Как работать в Базе знаний</h2>
 			<div class="how__container container">
 				<div class="how__wrap">
 					<div class="how__item">

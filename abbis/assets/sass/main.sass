@@ -502,7 +502,9 @@ h2
 		margin: 0
 
 .banner
-	padding-top: 80px
+	// padding-top: 80px
+	padding-top: 150px
+	padding-bottom: 50px
 	box-shadow: 0 -5px 10px gray
 	background: url(../img/banner-bg.jpg)
 	background-size: cover
@@ -656,6 +658,11 @@ h2
 
 	&__text
 		margin-bottom: 30px
+		overflow: hidden
+		text-overflow: ellipsis
+		display: -webkit-box
+		-webkit-line-clamp: 5
+		-webkit-box-orient: vertical
 
 	&__more
 		position: absolute
@@ -1648,6 +1655,13 @@ h2
 
 	&__text
 		margin-bottom: 15px
+
+		p
+			overflow: hidden
+			text-overflow: ellipsis
+			display: -webkit-box
+			-webkit-line-clamp: 3
+			-webkit-box-orient: vertical
 
 	&__edit
 		display: flex
