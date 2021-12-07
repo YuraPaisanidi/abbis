@@ -414,7 +414,7 @@
 
 // function my_search_order( $query ) {
 // 	if ($query->is_search) {
-// $query->set( 'order', 'DESC' );
+// $query->set( 'order', 'desc' );
 // 			$query->set( 'orderby', 'date' );
 // 	};
 // 	return $query;

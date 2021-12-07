@@ -13,7 +13,7 @@
 				<a href="#work" class="btn--more">Подробнее</a>
 			</div>
 			<div class="banner__img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner1.png" alt="">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner-img.png" alt="">
 			</div>
 			<a href="#work" class="btn--more btn--more_mobile">Подробнее</a>
 		</div>

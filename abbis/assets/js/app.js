@@ -339,4 +339,32 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		forms('.form');
 
+		//--------------------Search sort----------------------
+	// const sortByRelevBtn = document.querySelector('#sortRelev');
+	// const sortByDateBtn = document.querySelector('#sortDate');
+	// const sortByRelevLink = '&orderby=post_relevance&order=asc';
+	// const sortByDateLink = '&orderby=post_date&order=asc';
+	
+	// const sortResult = () => {
+	// 	let currentUrl = 0;
+
+	// 	const getCurrentUrl = () => {
+	// 		currentUrl = window.location.href;
+	// 	}
+
+	// 	getCurrentUrl();
+
+	// 	if(event.target.id === 'sortRelev') {
+	// 		let sortByRelevUrl = currentUrl + sortByRelevLink;
+	// 		sortByRelevBtn.href = sortByRelevUrl;
+	// 	}
+	// 	if(event.target.id === 'sortDate') {
+	// 		let sortByDateUrl = currentUrl + sortByDateLink;
+	// 		sortByDateBtn.href = sortByRelevUrl;
+	// 	}
+
+	// }
+
+
 });
+

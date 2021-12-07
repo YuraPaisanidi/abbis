@@ -9,6 +9,13 @@
 	</div>
 </div>
 
+<div class="search-filter container">
+	<label>Отсортировано:</label>
+	<a href="#" id="sortDate" onclick="sortResult()">по дате</a>
+	<a href="#" id="sortRelev" onclick="sortResult()">по релевантности</a>
+</div>
+
+
 <section class="result">
 	<div class="result__container container">
 
@@ -108,5 +115,35 @@
 
 	</div>
 </section>
+
+<script>
+	const sortByRelevBtn = document.querySelector('#sortRelev');
+	const sortByDateBtn = document.querySelector('#sortDate');
+	const sortByRelevLink = '&orderby=post_relevance&order=desc';
+
+	const checkWindowUrl = () => {
+		if(window.location.href.includes('post_relevance')) {
+			document.querySelector('#sortRelev').classList.add('active')
+		} else {
+			document.querySelector('#sortDate').classList.add('active')
+		}
+	}
+
+	checkWindowUrl();
+
+	const sortResult = () => {
+		let currentUrl = window.location.href;
+
+		if(event.target.id === 'sortRelev') {
+			let sortByRelevUrl = currentUrl + sortByRelevLink;
+			sortByRelevBtn.href = sortByRelevUrl;
+		}
+		if(event.target.id === 'sortDate') {
+			currentUrl = currentUrl.replace('orderby=post_relevance&order=desc');
+			sortByDateBtn.href = currentUrl;
+		}
+
+	}
+</script>
 
 <?php get_footer(); ?>

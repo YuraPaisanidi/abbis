@@ -478,9 +478,34 @@ h2
 		// 		color: #0f233f
 		// 		padding: 0 40px 0 45px
 
+.search-filter
+	display: flex
+	justify-content: flex-end
+	gap: 5px
+	margin-top: 20px
+
+	+r(767)
+		justify-content: flex-start
+
+	+r(480)
+		font-size: 12px
+
+	a
+		color: $text
+		text-decoration: underline
+
+		&.active
+			background: #e8e9ec
+			text-decoration: none
+	
+	label
+		margin: 0
+
 .banner
 	padding-top: 80px
 	box-shadow: 0 -5px 10px gray
+	background: url(../img/banner-bg.jpg)
+	background-size: cover
 
 	+r(992)
 		padding-top: 70px
