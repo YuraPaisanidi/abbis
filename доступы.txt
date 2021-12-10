@@ -1,0 +1,3 @@
+WP:
+login: Admin
+pass: %Qpm#w04KUh^1gkS%nqZ&@iO

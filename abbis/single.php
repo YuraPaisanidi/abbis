@@ -72,21 +72,21 @@
 					<div class="form__wrap">
 						<div class="form__item">
 							<label for="formName" class="form__label">КОНТАКТНОЕ ЛИЦО*</label>
-							<input id="formName" type="text" name="name" class="form__input _req _contact">
+							<input id="formName" type="text" name="name2" class="form__input _req _contact">
 						</div>
 						<div class="form__item">
 							<label for="formMail" class="form__label">ВАШ E-MAIL*</label>
-							<input id="formMail" type="email" name="mail" class="form__input _req _email">
+							<input id="formMail" type="email" name="mail2" class="form__input _req _email">
 						</div>
 						<div class="form__item">
 							<label for="formFund" class="form__label">ВАША ОРГАНИЗАЦИЯ*</label>
-							<input id="formFund" type="text" name="fund" class="form__input _req _organization">
+							<input id="formFund" type="text" name="fund2" class="form__input _req _organization">
 						</div>
 					</div>
 
 					<div class="form__item form__item_text">
 						<label for="formMessage2" class="form__label">СООБЩЕНИЕ*</label>
-						<textarea id="formMessage2" name="message" class="form__textarea _req _massage"></textarea>
+						<textarea id="formMessage2" name="message2" class="form__textarea _req _massage"></textarea>
 					</div>
 
 					<div class="form__personal">

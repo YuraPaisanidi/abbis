@@ -13,11 +13,11 @@
 	$mail->IsHTML(true);
 
 	//От каго письмо
-	$mail->setFrom('flexdesign.sales@gmail.com', 'Стартовый макет');
+	$mail->setFrom('flexdesign.sales@gmail.com', 'Письмо с сайта');
 	//Кому отправить
 	$mail->addAddress('flexdesign.sales@gmail.com');
 	//Тема письма
-	$mail->Subject = ('Вопрос');
+	$mail->Subject = ('Письмо с сайта');
 
 	//Рука
 	$hand = 'Правая';
@@ -26,7 +26,7 @@
 	}
 
 	//Тело письма
-	$body = '<h1>Вопрос</h1>';
+	$body = '<h1>Письмо</h1>';
 
 	if(trim(!empty($_POST['name']))) {
 		$body.='<p><strong>Имя: </strong>' . $_POST['name']. '</p>';
@@ -38,6 +38,18 @@
 		$body.='<p><strong>Почта: </strong>' . $_POST['fund']. '</p>';
 	}
 	if(trim(!empty($_POST['message']))) {
+		$body.='<p><strong>Сообщение: </strong>' . $_POST['message']. '</p>';
+	}
+	if(trim(!empty($_POST['name2']))) {
+		$body.='<p><strong>Имя: </strong>' . $_POST['name']. '</p>';
+	}
+	if(trim(!empty($_POST['mail2']))) {
+		$body.='<p><strong>Почта: </strong>' . $_POST['mail']. '</p>';
+	}
+	if(trim(!empty($_POST['fund2']))) {
+		$body.='<p><strong>Почта: </strong>' . $_POST['fund']. '</p>';
+	}
+	if(trim(!empty($_POST['message2']))) {
 		$body.='<p><strong>Сообщение: </strong>' . $_POST['message']. '</p>';
 	}
 

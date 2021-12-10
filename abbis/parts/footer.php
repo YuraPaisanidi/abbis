@@ -81,7 +81,7 @@
 								</div>
 							</div>
 							<div class="form__capture">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/img/capture.png" alt="">
+								<img src="img/capture.png" alt="">
 							</div>
 						</div>
 
