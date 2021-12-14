@@ -376,47 +376,10 @@
 		}
 	}
 
+	add_filter( 'get_comment_date', 'wpse_comment_date_18350375' );    
+	function wpse_comment_date_18350375( $date ) {
+		$date = date("d.m.Y");   
+		return $date;
+	}
 
-	//------------------Register Custom Post Вопросы---------------------
-// 	function questions_post_type() {
 
-// 		$labels = array(
-// 				'name'                  => _x( 'Результаты поиска', 'Post Type General Name', 'text_domain' ),
-// 				'singular_name'         => _x( 'Результаты поиска', 'Post Type Singular Name', 'text_domain' ),
-// 				'menu_name'             => __( 'Результаты поиска', 'text_domain' ),
-// 				'all_items'             => __( 'Результаты поиска', 'text_domain' ),
-// 				'add_new_item'          => __( 'Добавить вопрос', 'text_domain' ),
-// 				'add_new'               => __( 'Добавить вопрос', 'text_domain' ),
-// 		);
-// 		$args = array(
-// 				'label'                 => __( 'Результаты поиска', 'text_domain' ),
-// 				'labels'                => $labels,
-// 				'supports'              => array( 'title', 'thumbnail', 'excerpt', 'comments'),// 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-// 				'hierarchical'          => false,
-// 				'public'                => true,
-// 				'show_ui'               => true,
-// 				'show_in_menu'          => true,
-// 				'menu_position'         => 4,
-// 				'menu_icon'             => 'dashicons-images-alt2',
-// 				'show_in_admin_bar'     => true,
-// 				'show_in_nav_menus'     => true,
-// 				'can_export'            => true,
-// 				'has_archive'           => true,
-// 				'exclude_from_search'   => false,
-// 				'publicly_queryable'    => true,
-// 				'capability_type'       => 'page',
-// 				'taxonomies' => array('post_tag'),
-// 		);
-// 		register_post_type( 'questions', $args );
-
-// }
-// add_action( 'init', 'questions_post_type', 0 );
-
-// function my_search_order( $query ) {
-// 	if ($query->is_search) {
-// $query->set( 'order', 'desc' );
-// 			$query->set( 'orderby', 'date' );
-// 	};
-// 	return $query;
-// };
-// add_filter( 'pre_get_posts', 'my_search_order' );

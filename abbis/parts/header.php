@@ -10,7 +10,7 @@
 				</div>
 				<div class="header__list">
 					<ul>
-						<li><a href="http://www.abiss.tw1.ru/" target="_blank">Ассоциация АБИСС</a></li>
+						<li><a href="https://www.abiss.ru/" target="_blank">Ассоциация АБИСС</a></li>
 						<li><a href="#" class="modal__form">Задать вопрос</a></li>
 						<li><a href="<?php echo get_home_url(); ?>/derevo-tegov">Дерево тегов</a></li>
 						<li><a href="#" class="modal__contact">Контакты</a></li>

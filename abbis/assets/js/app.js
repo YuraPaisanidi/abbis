@@ -244,23 +244,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
 				function uploadFile(file) {
 			
-					if (!['image/jpeg', 'image/png', 'image/gif', 'image/ico', 'application/pdf'].includes(file.type)) {
-						alert('Только изображения');
-						formImage.value = '';
-						return;
-					}
+					// if (!['image/jpeg', 'image/png', 'image/gif', 'image/ico', 'application/pdf'].includes(file.type)) {
+					// 	alert('Только изображения');
+					// 	formImage.value = '';
+					// 	return;
+					// }
 			
-					if (file.size > 2 * 1024 * 1024) {
-						alert('Размер менее 2 мб.');
-						return;
-					}
+					// if (file.size > 2 * 1024 * 1024) {
+					// 	alert('Размер менее 2 мб.');
+					// 	return;
+					// }
 			
 					var reader = new FileReader();
 					reader.onload = function (e) {
-						if(['application/pdf'].includes(file.type)) {
-							formPreview.innerHTML = `Файл выбран`;
-						}else{
+						if(['image/jpeg', 'image/png', 'image/gif', 'image/ico'].includes(file.type)) {
 							formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
+						}else{
+							formPreview.innerHTML = document.querySelector('input[type=file]').files[0].name;
 						}
 						
 					};
@@ -339,31 +339,27 @@ document.addEventListener("DOMContentLoaded", function() {
 		};
 		forms('.form');
 
-		//--------------------Search sort----------------------
-	// const sortByRelevBtn = document.querySelector('#sortRelev');
-	// const sortByDateBtn = document.querySelector('#sortDate');
-	// const sortByRelevLink = '&orderby=post_relevance&order=asc';
-	// const sortByDateLink = '&orderby=post_date&order=asc';
-	
-	// const sortResult = () => {
-	// 	let currentUrl = 0;
+//----------------------------------Scroll----------------------
+	document.querySelectorAll('a[href^="#"').forEach(link => {
 
-	// 	const getCurrentUrl = () => {
-	// 		currentUrl = window.location.href;
-	// 	}
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-	// 	getCurrentUrl();
+        let href = this.getAttribute('href').substring(1);
 
-	// 	if(event.target.id === 'sortRelev') {
-	// 		let sortByRelevUrl = currentUrl + sortByRelevLink;
-	// 		sortByRelevBtn.href = sortByRelevUrl;
-	// 	}
-	// 	if(event.target.id === 'sortDate') {
-	// 		let sortByDateUrl = currentUrl + sortByDateLink;
-	// 		sortByDateBtn.href = sortByRelevUrl;
-	// 	}
+        const scrollTarget = document.getElementById(href);
 
-	// }
+        const topOffset = document.querySelector('.header').offsetHeight;
+        // const topOffset = 0; // если не нужен отступ сверху 
+        const elementPosition = scrollTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - topOffset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
 
 
 });

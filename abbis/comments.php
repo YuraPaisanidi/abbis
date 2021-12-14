@@ -56,8 +56,12 @@ if ( post_password_required() ) {
 					echo '<div class="team__person"><div class="team__person_img">' . get_avatar( $comment, 250 ); '';
 					echo '</div><div class="team__person_info"><p class="team__person_title">' . $comment->comment_author . '</p>';
 					// echo '<p class="team__person_subtitle">' . get_the_author_meta('user_description'); '</p>';
-					echo '<div class="team__person_text">' . $comment->comment_content . '</div></div></div>';
+					echo '<div class="team__person_text">' . $comment->comment_content . '</div>';
+					// echo '<div class="team__person_date">' . $comment->comment_date_gmt . '</div></div></div>';
+					echo '<div class="team__person_date">Опубликовано: ' . get_comment_date(); '</div>';
+					echo '</div></div>';
 			}} ?>
+
 		</div><!-- .comment-list -->
 
 		<?php

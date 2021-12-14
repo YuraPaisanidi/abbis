@@ -90,6 +90,7 @@
 
 		&:hover
 			background: $lite
+			color: #fff
 
 	&--form
 		text-transform: uppercase
@@ -478,11 +479,21 @@ h2
 		// 		color: #0f233f
 		// 		padding: 0 40px 0 45px
 
+.search__top
+	display: flex
+	align-items: flex-end
+	justify-content: space-between
+	gap: 5px
+
+	+r(767)
+		flex-direction: column
+		align-items: flex-start
+
 .search-filter
 	display: flex
 	justify-content: flex-end
 	gap: 5px
-	margin-top: 20px
+	// margin-top: 20px
 
 	+r(767)
 		justify-content: flex-start
@@ -607,8 +618,7 @@ h2
 			margin-bottom: 15px
 
 .update
-	padding-top: 90px
-	padding-bottom: 60px
+	padding: 65px 0
 
 	+r(576)
 		padding-top: 30px
@@ -634,6 +644,11 @@ h2
 			.update__more
 				&:hover
 					color: #fff
+
+			.update__arrow
+				border-right: #fff 1px solid
+				border-bottom: #fff 1px solid
+
 
 	&__wrap
 		display: flex
@@ -869,7 +884,7 @@ h2
 	justify-content: space-between
 
 .tag
-	padding-bottom: 100px
+	padding-bottom: 50px
 
 	+r(576)
 		padding-bottom: 30px
@@ -1033,6 +1048,12 @@ h2
 		color: #5d7aa1
 		font-size: 12px
 
+	&__link
+		margin-top: 30px
+
+		&:hover
+			cursor: pointer
+
 //------team------
 .crumbs
 	padding-top: 110px
@@ -1086,6 +1107,8 @@ h2
 		padding-top: 30px
 
 	&__answer
+		margin-bottom: 50px
+
 		&_title,h2
 			margin-bottom: 30px
 
@@ -1109,8 +1132,6 @@ h2
 		p
 			margin-bottom: 20px
 
-
-
 	&__comment
 		display: flex
 		gap: 10px
@@ -1129,13 +1150,22 @@ h2
 	&__person
 		display: flex
 		gap: 50px
-		margin-bottom: 40px
+		margin-bottom: 50px
 		// align-items: center
 
 		+r(992)
 			gap: 20px
 
 		+r(576)
+			flex-direction: column
+
+		&_date
+			margin-top: auto
+			font-size: 13px
+			color: #9da7b6
+
+		&_info
+			display: flex
 			flex-direction: column
 
 		&_img
@@ -1168,6 +1198,11 @@ h2
 			display: flex
 			flex-direction: column
 			gap: 20px
+
+	&__date
+		font-size: 13px
+		color: #9da7b6
+
 .bank
 	margin-bottom: 50px
 
@@ -1236,6 +1271,16 @@ h2
 
 			&:hover
 				background: $lite
+
+	&__bottom
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 10px
+
+	&__date
+		font-size: 13px
+		color: #9da7b6
 
 .order
 	padding-bottom: 60px
@@ -1416,7 +1461,8 @@ h2
 
 	&__block
 		display: flex
-		gap: 10px
+		flex-direction: column
+		// gap: 10px
 
 		+r(992)
 			margin-bottom: 15px
@@ -1438,6 +1484,8 @@ h2
 			margin-right: 0
 
 	&__file
+		display: flex
+		gap: 5px
 
 		&_item
 			position: relative
@@ -1458,7 +1506,7 @@ h2
 
 		&_preview
 			display: inline-block
-			max-width: 100px
+			max-width: 200px
 
 			img
 				max-width: 100%
@@ -1669,6 +1717,7 @@ h2
 		justify-content: space-between
 		color: #8a8a8a
 		margin-bottom: 25px
+		height: 35px
 
 		+r(480)
 			flex-direction: column
@@ -1869,7 +1918,7 @@ h2
 
 		+r(1400)
 			max-width: 90vw
-			padding: 40px
+			padding: 0 40px 40px 40px
 		
 		+r(576)
 			padding: 0
@@ -1949,6 +1998,10 @@ h2
 
 .tags-cloud
 	padding: 100px 0
+
+	.crumbs
+		padding: 0
+		margin-bottom: 30px
 
 	&--search
 		padding: 0
@@ -2064,3 +2117,34 @@ h2
 		width: 100%
 		box-shadow: 0 0 20px #baddfd
 
+.policy
+	margin-top: 81px
+	padding-top: 30px
+
+
+	&__title
+		margin-bottom: 30px
+
+	p
+		margin: 15px 0
+
+	ul
+		list-style-type: disc
+		padding-left: 15px
+
+	a
+		color: $text
+		text-decoration: underline
+
+	.crumbs
+		padding-top: 0
+		margin-bottom: 30px
+
+		+r(767)
+			display: none
+
+		ul
+			padding-left: 0
+
+		p
+			margin: 0

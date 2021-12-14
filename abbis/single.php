@@ -14,6 +14,7 @@
 		<div class="container">
 			<div class="team__answer">
 				<?php the_field('question'); ?>
+				<div class="team__date">Дата публикации: <?php the_modified_date() ?></div>
 			</div>
 
 			<div class="tag tag--team">
@@ -36,6 +37,7 @@
 						$text = get_sub_field('text');
 						$img = get_sub_field('img');
 						$doc = get_sub_field('doc');
+						$date = get_sub_field('date');
 						?>
 						<div class="bank__block">
 							<div class="bank__img">
@@ -44,7 +46,10 @@
 							<div class="bank__text">
 								<p class="bank__text_title"><?php echo $title; ?></p>
 								<p class="bank__text_text"><?php echo $text; ?></p>
-								<a href="<?php echo $doc; ?>" data-fancybox="first_gallery">Полный текст документа</a>
+								<div class="bank__bottom">
+									<a href="<?php echo $doc; ?>" data-fancybox="first_gallery">Полный текст документа</a>
+									<p class="bank__date">Опубликовано: <?php echo $date; ?></p>
+								</div>
 							</div>
 						</div>
 

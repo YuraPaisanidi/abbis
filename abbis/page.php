@@ -1,50 +1,37 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package abbis
- */
-
-get_header();
+/* Template name: Политика конфидециальности */
 ?>
 
-	<main id="primary" class="site-main">
+<?php get_header(); ?>
 
-	<?php 
-	$tags = wp_get_post_tags($post->ID);
-	if ($tags) {
-		 $tag_ids = array();
-		 foreach($tags as $individual_tag) $tag_ids[] = $individual_tag->term_id;
-		 $args=array(
-		 'tag__in' => $tag_ids, // Сортировка происходит по тегам (меткам)
-		 'orderby'=>rand, // Добавляем условие сортировки рандом (случайный подбор)
-		 'caller_get_posts'=>1, // Запрещаем повторение ссылок
-		 'post__not_in' => array($post->ID),
-		 'showposts'=>6 // Цифра означает количество выводимых записей
-		 );
-		 $my_query = new wp_query($args);
-		 if( $my_query->have_posts() ) {
-			while ($my_query->have_posts()) {
-					$my_query->the_post();
-				?>
+<main class="main">
 
-					<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"></a>
+	
+	<section class="policy">
+		<div class="crumbs">
+			<div class="container">
+				<ul>
+					<li><a href="<?php echo get_home_url(); ?>/">Главная</a></li>
+					<li><p><?php the_title(); ?></p></li>
+				</ul>
+			</div>
+		</div>
 
-				<?php
-			}
-		}
-		 wp_reset_query();
-	}
-?>
+		<div class="policy__container container">
 
-	</main><!-- #main -->
+				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+				
+					<h2 class="h2 policy__title"><?php the_title(); ?></h2>
+
+					<?php the_content(); ?>
+
+				<?php endwhile; ?>
+				<?php endif; ?>
+
+		</div>
+	</section>
+
+</main>
 
 <?php
 get_sidebar();
