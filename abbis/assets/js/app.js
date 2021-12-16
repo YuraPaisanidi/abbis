@@ -361,6 +361,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//-------------------------------Show search form---------
+	const showSearchForm = (searchBtn, searchForm) => {
+		const btn = document.querySelector(searchBtn),
+					form = document.querySelector(searchForm);
+
+		const showForm = () => {
+			btn.classList.toggle('active');
+			console.log('aaaa');
+		}
+
+		btn.addEventListener('click', showForm);
+
+	}
+	// showSearchForm('.search__open', '.is-search-form');
 
 });
 

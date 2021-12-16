@@ -24,6 +24,14 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
+
+	$current_post_id = get_the_ID();
+
+	$args = array (
+		'post_id' => $current_post_id,
+		'status' => 'approve'
+	);
+	
 	if ( have_comments() ) :
 		?>
 		<!-- <h2 class="comments-title">
@@ -45,24 +53,25 @@ if ( post_password_required() ) {
 			}
 			?>
 		</h2>.comments-title -->
+		
 
 		<?php the_comments_navigation(); ?>
 
 		<div class="team__list">
 			<? $comments_query = new WP_Comment_Query;
-				$comments = $comments_query->query( 'status=approve' );
+				// $comments = $comments_query->query( 'status=approve' );
+				$comments = $comments_query->query( $args );
 				if ( $comments ) {
 				foreach ( $comments as $comment ) {
 					echo '<div class="team__person"><div class="team__person_img">' . get_avatar( $comment, 250 ); '';
 					echo '</div><div class="team__person_info"><p class="team__person_title">' . $comment->comment_author . '</p>';
-					// echo '<p class="team__person_subtitle">' . get_the_author_meta('user_description'); '</p>';
 					echo '<div class="team__person_text">' . $comment->comment_content . '</div>';
-					// echo '<div class="team__person_date">' . $comment->comment_date_gmt . '</div></div></div>';
-					echo '<div class="team__person_date">Опубликовано: ' . get_comment_date(); '</div>';
-					echo '</div></div>';
+					echo '<div class="team__person_date">Опубликовано: ' . get_comment_date(); '';
+					// echo '<div class="team__person_date">Опубликовано: '  . $comment->comment_date . '</div>';
+					echo '</div></div></div>';
 			}} ?>
 
-		</div><!-- .comment-list -->
+		</div><!--.comment-list -->
 
 		<?php
 		the_comments_navigation();
