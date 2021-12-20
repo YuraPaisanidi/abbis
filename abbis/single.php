@@ -57,18 +57,12 @@
 				</div>
 			<?php endif; ?>
 
-
-			<div class="team__comment">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/preds.svg" alt="">
-				<p>Комментарии консультантов</p>
-			</div>
-
 			<?php comments_template(); ?>
 
 		</div>
 	</section>
 
-	<section class="order">
+	<!-- <section class="order">
 		<div class="container">
 			<div class="order__wrap">
 				<h2 class="order__title h2">Оставить заявку</h2>
@@ -127,6 +121,11 @@
 					</div>
 				</form>
 			</div>
+		</div>
+	</section> -->
+	<section class="order">
+		<div class="container">
+			<?php echo do_shortcode( '[caldera_form id="CF61b31aa92f609"]' ); ?>
 		</div>
 	</section>
 

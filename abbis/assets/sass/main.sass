@@ -859,6 +859,9 @@ h2
 	&__text
 		text-align: center
 
+		+r(767)
+			margin-bottom: 30px
+
 		br
 			+r(1200)
 				display: none
@@ -1751,6 +1754,9 @@ h2
 		border-bottom: 1px solid #E9E9E9
 		margin-bottom: 30px
 
+		+r(480)
+			height: 150px
+
 	&__text
 		margin-bottom: 15px
 
@@ -2161,6 +2167,9 @@ h2
 	&__container
 		@extend .work__container
 
+		+r(576)
+			padding: 0 15px
+
 	&__title
 		text-align: center
 		margin-bottom: 40px
@@ -2170,7 +2179,11 @@ h2
 		grid-template-columns: 1fr 1fr
 		gap: 20px
 		height: 350px
-	
+
+		+r(767)
+			grid-template-columns: 1fr
+			height: auto
+
 	&__item
 		@extend .work__slide
 		width: 100%
@@ -2207,3 +2220,40 @@ h2
 
 		p
 			margin: 0
+
+.caldera
+	&-grid
+		@extend .order__wrap
+
+		label
+			font-size: 12px
+			color: #929fb5
+			font-weight: 400 !important
+		
+		.form-control
+			height: 40px !important
+			border: 1px solid #8ea2bd !important
+			border-radius: 6px !important
+
+		.checkbox
+			label
+				font-size: 16px
+				color: $text
+				
+				a
+					color: $text
+					text-decoration: underline
+
+	&__textarea
+		textarea
+			@extend .form__textarea
+
+	&__btn
+
+		input
+			@extend .btn--form
+
+	&__file
+
+		input
+			border: none

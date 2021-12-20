@@ -57,6 +57,11 @@ if ( post_password_required() ) {
 
 		<?php the_comments_navigation(); ?>
 
+		<div class="team__comment">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/preds.svg" alt="">
+			<p>Комментарии консультантов</p>
+		</div>
+
 		<div class="team__list">
 			<? $comments_query = new WP_Comment_Query;
 				// $comments = $comments_query->query( 'status=approve' );
