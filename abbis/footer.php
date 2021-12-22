@@ -15,8 +15,15 @@
 
 		<?php wp_footer();?>
 
-		<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+		
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+		<script>
+			const hideModalThanks = () => {
+				const modalThanks = document.querySelector('#modal__thanks');
+				modalThanks.classList.add('hidden');
+				document.querySelector('.modal').classList.remove('active');
+			}
+		</script>
 
 	</body>
 </html>
